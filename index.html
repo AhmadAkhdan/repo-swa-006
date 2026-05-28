@@ -1,20 +1,188 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
- <meta charset="UTF-8">
- <title>Praktikum Azure Static Web Apps</title>
- <style>
- body { font-family: Arial; margin: 40px; background: #f4f6f8; }
- .container { background: white; padding: 24px; border-radius: 12px; }
- h1 { color: #1f4e79; }
- </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum Azure Static Web Apps</title>
+    <style>
+        /* Reset & Base Styles */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f0f6ff; 
+            color: #333; 
+            line-height: 1.6; 
+        }
+
+        /* Header & Navigasi */
+        header { 
+            background-color: #0078D4; /* Warna Biru Azure */
+            color: white; 
+            padding: 1rem 2rem; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+        }
+        header h2 { 
+            font-size: 1.5rem; 
+            letter-spacing: 1px;
+        }
+        nav ul { 
+            list-style: none; 
+            display: flex; 
+            gap: 1.5rem; 
+        }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            font-weight: 500; 
+            transition: opacity 0.3s ease; 
+        }
+        nav a:hover { 
+            opacity: 0.8; 
+            text-decoration: underline;
+        }
+
+        /* Container Utama */
+        .container { 
+            max-width: 1000px; 
+            margin: 3rem auto; 
+            padding: 0 1.5rem; 
+        }
+
+        /* Hero Section (Bagian Utama) */
+        .hero { 
+            background: white; 
+            padding: 3.5rem 2rem; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+            text-align: center; 
+            margin-bottom: 2.5rem; 
+            border-top: 5px solid #0078D4; 
+        }
+        .hero h1 { 
+            color: #1f4e79; 
+            margin-bottom: 1rem; 
+            font-size: 2.5rem; 
+        }
+        .hero p { 
+            color: #555; 
+            font-size: 1.1rem; 
+            margin-bottom: 2rem; 
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .badge { 
+            display: inline-block; 
+            background: #e1f0ff; 
+            color: #0078D4; 
+            padding: 0.5rem 1rem; 
+            border-radius: 20px; 
+            font-size: 0.9rem; 
+            font-weight: bold; 
+            margin: 0.5rem; 
+        }
+
+        /* Grid Informasi / Fitur */
+        .features { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 1.5rem; 
+        }
+        .card { 
+            background: white; 
+            padding: 2rem; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+            border-left: 4px solid #50E6FF; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+        .card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+        .card h3 { 
+            color: #1f4e79; 
+            margin-bottom: 0.8rem; 
+        }
+        .card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer { 
+            text-align: center; 
+            padding: 2rem; 
+            color: #777; 
+            margin-top: 3rem; 
+            background-color: #e6f0fa;
+        }
+
+        /* Responsive Design untuk Layar Kecil (HP) */
+        @media (max-width: 768px) {
+            header { 
+                flex-direction: column; 
+                text-align: center; 
+                gap: 1rem; 
+            }
+            .hero h1 { 
+                font-size: 2rem; 
+            }
+        }
+    </style>
 </head>
 <body>
- <div class="container">
- <h1>Praktikum Azure Static Web Apps</h1>
- <p>Halaman ini berhasil di-deploy menggunakan Azure Static Web Apps.</p>
- <p>Layanan: Azure Static Web Apps</p>
- <p>Deployment: GitHub Repository</p>
- </div>
+
+    <header>
+        <h2>Cloud Lab</h2>
+        <nav>
+            <ul>
+                <li><a href="#">Beranda</a></li>
+                <li><a href="#">Dokumentasi</a></li>
+                <li><a href="#">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <section class="hero">
+            <h1>Praktikum Azure Static Web Apps</h1>
+            <p>Selamat! Halaman web statis ini telah berhasil dikembangkan dan siap untuk di-deploy menggunakan layanan komputasi awan Microsoft Azure.</p>
+            <div>
+                <span class="badge">🚀 Azure Static Web Apps</span>
+                <span class="badge">📦 GitHub Actions (CI/CD)</span>
+                <span class="badge">🌐 HTML5 & CSS3</span>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="card">
+                <h3>1. Integrasi GitHub</h3>
+                <p>Deployment otomatis menggunakan GitHub Actions. Setiap kali Anda melakukan <i>push</i> atau perubahan kode ke repositori, web akan diperbarui secara otomatis.</p>
+            </div>
+            <div class="card">
+                <h3>2. Hosting Global yang Cepat</h3>
+                <p>Konten statis Anda akan didistribusikan secara global. Hal ini memastikan halaman web dimuat dengan sangat cepat di mana pun pengguna berada.</p>
+            </div>
+            <div class="card">
+                <h3>3. Keamanan Bawaan</h3>
+                <p>Mendapatkan dukungan sertifikat SSL/TLS gratis yang diperbarui secara otomatis, memastikan koneksi dari browser pengunjung selalu aman (HTTPS).</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Praktikum Cloud Computing. Dibuat untuk tujuan pembelajaran deployment web statis.</p>
+    </footer>
+
 </body>
 </html>
